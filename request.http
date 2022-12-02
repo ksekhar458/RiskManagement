@@ -1,0 +1,5 @@
+
+GET http://localhost:4004/service/risk/Risks?$count=true&$select=HasActiveEntity,ID,IsActiveEntity,bp_BusinessPartner,criticality,impact,miti_ID,owner,prio,title&$filter=(IsActiveEntity eq false or SiblingEntity/IsActiveEntity eq null)&$expand=bp($select=BusinessPartner,LastName),miti($select=ID,IsActiveEntity,descr)&$skip=0&$top=30
+
+
+GET http://localhost:4004//service/risk/BusinessPartners?$select=BusinessPartner,FirstName,LastName&$orderby=LastName&$skip=0&$top=49
